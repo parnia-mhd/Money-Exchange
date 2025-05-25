@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل کاربری</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+ <link rel="stylesheet" href="../styles/output.css">
+</head>
+<body class="bg-gray-100 font-Vazirmatn">
+  <svg class="hidden">
+    <symbol id="alert" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+    </symbol>
+    <symbol
+    id="Menu-bar"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="size-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+    />
+  </symbol>
+
+  <symbol
+  id="close"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class="size-6"
+>
+  <path
+    fill-rule="evenodd"
+    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+    clip-rule="evenodd"
+  />
+</symbol>
+<symbol id="arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+</symbol>
+
+  </svg>
+
+<!-- هدر -->
+<header
+class="flex items-center justify-between mx-auto px-5 w-[100%] h-[64px] bg-[#F1F7FF] border-b-[1px] border-b-[#f3a20dba]"
+>
+<!-- right side -->
+<div class="flex items-center">
+  <!-- menu -->
+  <nav>
+    <!-- icon menu -->
+    <div class="">
+      <svg class="cursor-pointer Menu-bar w-11 h-12">
+        <use xlink:href="#Menu-bar"></use>
+      </svg>
+      <svg class="hidden close-icon cursor-pointer w-11 h-12">
+        <use xlink:href="#close"></use>
+      </svg>
+    </div>
+    <!-- menu items -->
+    <div
+      class="nav z-50 @max-[300px]:w-[210px] -right-[270px] absolute top-15 w-[270px] h-[380px] bg-white shadow-2xl shadow-[#e6eef8] rounded-2xl border-t-2 border-t-[#f3a20dba] transition-all"
+    >
+      <ul >
+        <li
+          class="transition-colors hover:text-[#f3a20dcc] delay-75 hover:border-b-[0.5px] border-b-[#f3a20dcc cursor-pointer inline-block pr-9 pt-5 py-2.5"
+        >
+          <a href="List of orders.html">سفارشات شما</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer hover:text-[#f3a20dcc] pr-9 py-2.5 w-30"
+        >
+          <a href="#">حواله یوتوپیا</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید ووچر یوتوپیا</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">شارژ حساب های شما</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید سرور اختصاصی</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید از سایت های خارجی</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">تیکت به پشتیبانی</a>
+        </li>
+        <li class="flex items-center justify-around py-2.5">
+          <!-- menu button -->
+          <a
+            class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[328px]:w-[100px] w-[114px] h-[34px] bg-[#F4F7FB]"
+            href="#"
+          >
+            <img
+              src="https://merikh.saina-shop.ir/merikhArz/src/images/call.svg"
+              alt=""
+            />
+            <span class="tracking-tighter text-zinc-700">تماس با ما</span>
+          </a>
+          <a
+            class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[300px]:w-[85px] w-[100px] h-[34px] bg-[#F4F7FB]"
+            href="#"
+          >
+            <img
+              src="https://merikh.saina-shop.ir/merikhArz/src/images/desc.svg"
+              alt=""
+            />
+            <span class="tracking-tighter text-zinc-700">درباره ما</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+  <!-- title -->
+
+<div
+class="mr-7 @max-[328px]:mr-3 @max-[328px]:tracking-tighter @max-[328px]:*:text-xl"
+>
+<span class="text-2xl font-bold"> مریخ</span>
+<span class="text-2xl font-medium pr-0.5 text-[#F3A30D]">ارز</span>
+</div>
+
+<!-- left side -->
+<div>
+  <a
+    class="hover:text-[#F3A30D] text-red-900 animate-pulse"
+    href="#"
+  >
+    <svg class="w-8 h-8 ">
+      <use xlink:href="#alert"></use>
+    </svg>
+  </a>
+</div>
+
+</header>
+  
+
+  <!--  -->
+  <div class="relative w-full max-w-lg mx-auto overflow-hidden">
+    <div class="w-full bg-gradient-to-r from-[#FFB01B] to-[#DE9408] text-white font-semibold text-center text-lg py-3 rounded-2xl mt-5">سرویس های پر طرفدار</div>
+    <div id="carousel-images" class="flex transition-transform duration-500">
+      <div class=" w-full flex-shrink-0"><img class="w-full" src="../pictures/virtual-server-icon-11.png"  />
+        <div class="mx-auto  w-[60%] bg-[#de9308] text-center py-2 rounded-4xl">
+          <span class="text-white">خرید سرور اختصاصی</span>
+          <span class="tracking-tight text-gray-200 ">( به زودی )</span>
+        </div>
+      </div>
+      <!-- image 2 -->
+      <div class=" w-full flex-shrink-0"><img class="w-full" src="../pictures/virtual-server-icon-11.png"  />
+        <div class="mx-auto  w-[60%] bg-[#de9308] text-center py-2 rounded-4xl">
+          <span class="text-white">خرید سرور اختصاصی</span>
+          <span class="tracking-tight text-gray-200 ">( به زودی )</span>
+        </div>
+      </div>
+<!-- image 3 -->
+<div class=" w-full flex-shrink-0"><img class="w-full" src="../pictures/virtual-server-icon-11.png"  />
+  <div class="mx-auto  w-[60%] bg-[#de9308] text-center py-2 rounded-4xl">
+    <span class="text-white">خرید سرور اختصاصی</span>
+    <span class="tracking-tight text-gray-200 ">( به زودی )</span>
+  </div>
+</div>
+
+      <!-- <div class=" w-full flex-shrink-0"><img class="w-full" src="../pictures/virtual-server-icon-11.png"  /></div>
+      <div class=" w-full flex-shrink-0"><img class="w-full" src="../pictures/virtual-server-icon-11.png"  /></div> -->
+
+    </div>
+  
+    <!-- دکمه‌های کنترل دستی -->
+    <button onclick="prevSlide()" class="rotate-180 absolute left-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FFB01B] to-[#DE9408] bg-opacity-50 text-white p-2 rounded-full">
+      <svg class="w-8 h-7">
+        <use xlink:href="#arrow"></use>
+      </svg>
+    </button>
+    <button onclick="nextSlide()" class=" absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FFB01B] to-[#DE9408] bg-opacity-50 p-2 text-white rounded-full">
+      <svg class="w-8 h-7">
+        <use xlink:href="#arrow"></use>
+      </svg>
+    </button>
+  </div>
+
+
+
+
+
+
+  
+<!-- پنل کاربری -->
+<section class="max-w-6xl mx-auto px-4 mt-8">
+  <div class="bg-white rounded-2xl shadow p-6 space-y-4">
+    <h2 class="text-xl md:text-2xl font-bold text-[#F3A30D] mb-4 text-center">پنل کاربری شما</h2>
+    <div class="space-y-2 text-gray-700 text-sm md:text-base">
+      <div><span class="font-bold text-gray-600">نام کاربر:</span> علی رضایی</div>
+      <div><span class="font-bold text-gray-600">موجودی کیف پول :</span> 0 تومان</div>
+      <div><span class="font-bold text-gray-600">شماره موبایل:</span> 09121234567</div>
+      <div><span class="font-bold text-gray-600">ایمیل:</span> ali@example.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- آخرین سفارشات -->
+<section class="max-w-6xl mx-auto px-4 mt-8">
+  <div class="bg-white rounded-2xl shadow p-6">
+    <h2 class="text-xl md:text-2xl font-bold text-[#F3A30D] mb-4 text-center">آخرین سفارشات</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-sm md:text-base text-gray-700">
+        <thead class="bg-indigo-50 text-gray-600">
+          <tr>
+            <th class="py-2 px-4 text-right">نوع سفارش</th>
+            <th class="py-2 px-4 text-right">تاریخ</th>
+            <th class="py-2 px-4 text-right">مبلغ</th>
+            <th class="py-2 px-4 text-right">وضعیت</th>
+            <th class="py-2 px-4 text-right">کد رهگیری</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="py-2 px-4"><a class="text-blue-600 pb-1.5 hover:text-[#f3a20dd7]" href="#">حواله پرفکت مانی</a></td>
+            <td class="py-2 px-4">۱۴۰۳/۰۲/۰۵</td>
+            <td class="py-2 px-4">۵۰,۰۰۰,۰۰۰ ریال</td>
+            <td class="py-2 px-4 text-green-600">موفق</td>
+            <td class="py-2 px-4">#123456</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-2 px-4"><a class="text-blue-600 pb-1.5 hover:text-[#f3a20dd7]" href="#">حواله پرفکت مانی</a></td>
+            <td class="py-2 px-4">۱۴۰۳/۰۲/۰۴</td>
+            <td class="py-2 px-4">۱۲۰,۰۰۰,۰۰۰ ریال</td>
+            <td class="py-2 px-4 text-red-500">در انتظار</td>
+            <td class="py-2 px-4">#123457</td>
+          </tr>
+          <tr >
+            <td class="py-2 px-4"><a class="text-blue-600 pb-1.5 hover:text-[#f3a20dd7]" href="#">حواله پرفکت مانی</a></td>
+            <td class="py-2 px-4">۱۴۰۳/۰۲/۰۵</td>
+            <td class="py-2 px-4">۵۰,۰۰۰,۰۰۰ ریال</td>
+            <td class="py-2 px-4 text-green-600">موفق</td>
+            <td class="py-2 px-4">#123456</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- اخبار و اطلاعیه‌ها -->
+<section class="max-w-6xl mx-auto px-4 mt-8 mb-12">
+  <div class="bg-white rounded-2xl shadow p-6 space-y-6">
+    <div>
+      <h2 class="text-xl md:text-2xl font-bold text-[#F3A30D] mb-4 text-center">اخبار و اطلاعیه‌ها</h2>
+      <div class="space-y-4 text-gray-700 text-sm md:text-base">
+        <div class="relative  bg-indigo-50 rounded-xl p-4">
+          <div class="text-lg font-semibold tracking-tight">پرداخت با حواله پرفکت مانی</div>
+          <div class="flex items-center justify-center my-2">
+            کاربران گرامی توجه فرمایید پرداخت با حواله پرفکت مانی به مشکل بر خورده است روش 
+            <span id="col-hidden" class="pr-1">...</span>
+            <div class="overflow-hidden transition-all duration-500 max-h-0 mr-0.5 inline-block" id="myCollapse">
+              جایگزین به زودی اعلام میشود 
+            </div>
+            
+            <a onclick="toggleCollapse()" class=" absolute left-5 hover:text-[#F3A30D] cursor-pointer bottom-2 border-b-[0.5px]  ">
+ادامه مطلب            </a>
+  
+          </div>    
+        </div>
+        <div class="bg-indigo-50 rounded-xl p-4">
+          اطلاعیه مهم درباره تغییر کارمزدها از تاریخ ۱۵ اردیبهشت.
+        </div>
+      </div>
+    </div>
+
+    <!-- دکمه‌ها -->
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-xl w-full md:w-auto">
+        تیکت به پشتیبانی
+      </button>
+      <button class="opacity-85 hover:opacity-100 bg-gradient-to-r from-[#FFB01B] to-[#DE9408] text-white font-bold py-2 px-6 rounded-xl w-full md:w-auto">
+        آرشیو اخبار
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- فوتر -->
+<footer class="bg-indigo-50 py-4 shadow-inner mt-8">
+  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+    © 2025 تمامی حقوق محفوظ است.
+  </div>
+</footer>
+<script src="../scripts/script.js"></script>
+</body>
+</html>

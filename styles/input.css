@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap");
+
+@theme {
+  --font-Vazirmatn: "vazirmatn", sans-serif;
+}
+
+@layer components {
+  /* .typewriter-text {
+    @apply border-l-1 border-white whitespace-nowrap overflow-hidden;
+  } */
+
+  .positive {
+    @apply text-green-700;
+  }
+  .negative {
+    @apply text-red-700;
+  }
+}

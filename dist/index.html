@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مریخ ارز</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="@container font-Vazirmatn">
+    <!-- All app icons -->
+    <svg class="hidden">
+      <symbol
+        id="Menu-bar"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </symbol>
+      <symbol
+        id="arrow-left-end-on-rectangle"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+        />
+      </symbol>
+      <symbol
+        id="close"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+    </svg>
+    <!-- header -->
+    <header
+      class="flex items-center justify-between mx-auto px-5 w-[100%] h-[64px] bg-[#F1F7FF] border-b-[1px] border-b-[#f3a20dba]"
+    >
+      <!-- right side -->
+      <div class="flex items-center">
+        <!-- menu -->
+        <nav>
+          <!-- icon menu -->
+          <div class="">
+            <svg class="cursor-pointer Menu-bar w-11 h-12">
+              <use xlink:href="#Menu-bar"></use>
+            </svg>
+            <svg class="hidden close-icon cursor-pointer w-11 h-12">
+              <use xlink:href="#close"></use>
+            </svg>
+          </div>
+          <!-- menu items -->
+          <div
+            class="nav z-50 @max-[300px]:w-[210px] -right-[270px] absolute top-15 w-[270px] h-[380px] bg-white shadow-2xl shadow-[#e6eef8] rounded-2xl border-t-2 border-t-[#f3a20dba] transition-all"
+          >
+            <ul>
+              <li
+                class="transition-colors hover:text-[#f3a20dcc] delay-75 hover:border-b-[0.5px] border-b-[#f3a20dcc cursor-pointer inline-block pr-9 pt-5 py-2.5"
+              >
+                <a href="List of orders.html">سفارشات شما</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer hover:text-[#f3a20dcc] pr-9 py-2.5 w-30"
+              >
+                <a href="#">حواله یوتوپیا</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+              >
+                <a href="#">خرید ووچر یوتوپیا</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+              >
+                <a href="#">شارژ حساب های شما</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+              >
+                <a href="#">خرید سرور اختصاصی</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+              >
+                <a href="#">خرید از سایت های خارجی</a>
+              </li>
+              <li
+                class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+              >
+                <a href="#">تیکت به پشتیبانی</a>
+              </li>
+              <li class="flex items-center justify-around py-2.5">
+                <!-- menu button -->
+                <a
+                  class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[328px]:w-[100px] w-[114px] h-[34px] bg-[#F4F7FB]"
+                  href="#"
+                >
+                  <img
+                    src="https://merikh.saina-shop.ir/merikhArz/src/images/call.svg"
+                    alt=""
+                  />
+                  <span class="tracking-tighter text-zinc-700">تماس با ما</span>
+                </a>
+                <a
+                  class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[300px]:w-[85px] w-[100px] h-[34px] bg-[#F4F7FB]"
+                  href="#"
+                >
+                  <img
+                    src="https://merikh.saina-shop.ir/merikhArz/src/images/desc.svg"
+                    alt=""
+                  />
+                  <span class="tracking-tighter text-zinc-700">درباره ما</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- title -->
+        <div
+          class="mr-7 @max-[328px]:mr-3 @max-[328px]:tracking-tighter @max-[328px]:*:text-xl"
+        >
+          <span class="text-2xl font-bold"> مریخ</span>
+          <span class="text-2xl font-medium pr-0.5 text-[#F3A30D]">ارز</span>
+        </div>
+      </div>
+      <!-- left side -->
+      <div>
+        <a
+          class="flex items-center justify-around text-amber-50 @max-[328px]:w-[90px] @max-[380px]:w-[110px] w-[138px] h-[43px] rounded-xl opacity-85 hover:opacity-100 bg-gradient-to-r from-[#FFB01B] to-[#DE9408]"
+          href="login.html"
+        >
+          <svg class="w-8 h-8 rotate-180 @max-[380px]:hidden">
+            <use xlink:href="#arrow-left-end-on-rectangle"></use>
+          </svg>
+          <span class="@max-[328px]:text-sm pb-0.5 pl-[5px]"
+            >ورود | ثبت‌نام</span
+          >
+        </a>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <div class="flex items-center mt-15 @max-[880px]:flex-wrap">
+        <!-- pic & title -->
+        <div class="relative mx-10 w-full">
+          <img
+            class="w-full h-full"
+            src="https://merikh.saina-shop.ir/merikhArz/src/images/mainImg.png"
+            alt="home-pic"
+          />
+          <div
+            class="flex items-center justify-center absolute right-0 left-0 mx-auto bottom-4 text-center py-3 h-13 z-[9] bg-black/45 w-[65%] border border-white/15 rounded-md **:lg:text-xl **:md:text-lg md:w-[70%] @max-[510px]:w-[85%]"
+          >
+            <div class="@max-[328px]:hidden">
+              <span class="text-white font-bold @max-[447px]:text-xs">
+                مریخ</span
+              >
+              <span
+                class="@max-[357px]:tracking-tighter @max-[447px]:text-xs font-medium pr-0.5 text-[#F3A30D]"
+              >
+                ارز
+              </span>
+              <span class="@min-[357px]:px-1 text-white font-bold">:</span>
+            </div>
+            <!--  -->
+            <span
+              class="hidden lg:text-lg text-white md:font-bold @max-[510px]:text-base @max-[357px]:tracking-tighter"
+            >
+              معاملات آسان رمز ارزها</span
+            >
+            <!--  -->
+            <span
+              class="lg:text-lg md:font-bold @max-[510px]:text-base @max-[447px]:text-xs @max-[357px]:tracking-tighter typewriter-text text-white font-bold font-Vazirmatn"
+              id="typewriter"
+            ></span>
+          </div>
+        </div>
+        <!-- buys section -->
+        <div
+          class="w-full flex flex-wrap justify-between ml-8 @max-[880px]:m-8"
+        >
+          <!-- part 1 -->
+          <a
+            class="@max-[357px]:w-full relative w-[45%] h-full flex justify-center items-center flex-col mt-2 bg-gradient-to-b from-[#FFC98B] to-[#FFF5EA] rounded-md"
+            href="#"
+          >
+            <img
+              class="object-cover bg-center h-full w-35 pb-10"
+              src="../pictures/utopia.png"
+              alt="utopia-pic"
+            />
+            <p
+              class="absolute bottom-3 text-base w-33 py-1 h-9 text-center rounded-3xl hover:bg-[#ffc98b43] hover:text-black/85"
+            >
+              خرید ووچر یوتوپیا
+            </p>
+          </a>
+          <!-- part 2 -->
+          <a
+            class="@max-[357px]:w-full @max-[357px]:mt-6 relative w-[45%] h-full flex justify-center items-center flex-col mt-2 rounded-md bg-gradient-to-b from-[#FFBEBE] to-[#FFF5EA]"
+            href="#"
+          >
+            <img
+              class="object-cover bg-center h-full w-35 py-3 pb-7"
+              src="../pictures/transmission.svg"
+              alt="transition-picture"
+            />
+            <p
+              class="absolute bottom-3 text-base w-33 py-1 h-9 text-center rounded-3xl hover:bg-[#ffbebe65] hover:text-black/85"
+            >
+              خرید حواله یوتوپیا
+            </p>
+          </a>
+          <!--  -->
+          <!-- part 3 -->
+          <a
+            class="@max-[357px]:w-full relative w-[45%] h-full flex justify-center items-center flex-col mt-6 bg-gradient-to-b from-[#8EBFFC] to-[#E5F1FF] rounded-md"
+            href="#"
+          >
+            <img
+              class="object-cover w-29 h-full py-5 pb-13"
+              src="../pictures/host.png"
+              alt="host-picture"
+            />
+            <p
+              class="absolute bottom-3 tracking-tighter text-base w-41 py-1 h-9 text-center rounded-3xl hover:bg-[#8ebffc44] hover:text-black/85 @max-[438px]:w-[60%] @max-[438px]:h-11 @max-[375px]:h-9 @max-[438px]:leading-4.5"
+            >
+              خرید از سایت های خارجی
+            </p>
+          </a>
+          <!-- part 4 -->
+          <a
+            class="@max-[357px]:w-full relative w-[45%] h-full flex justify-center items-center flex-col mt-6 bg-gradient-to-b from-[#DBBBFF] to-[#F6EDFF] rounded-md"
+            href="#"
+          >
+            <img
+              class="object-cover w-29 h-full py-5 pb-13"
+              src="../pictures/host.png"
+              alt="host-picture"
+            />
+            <p
+              class="absolute bottom-3 text-base w-35 py-1 h-9 text-center rounded-3xl hover:bg-[#dbbbff3c] hover:text-black/85"
+            >
+              شارژ حساب شما
+            </p>
+          </a>
+        </div>
+      </div>
+      <!-- انجام امور ارزی -->
+      <div>
+        <div class="flex items-center justify-center mt-35 mb-28">
+          <!-- image -->
+          <div class="xl:w-[5%] md:w-[7%] @max-[565px]:w-[15%]">
+            <img
+              class="w-full"
+              src="../pictures/checked.png"
+              alt="checked-image"
+            />
+          </div>
+          <!-- text -->
+          <div class="mr-3">
+            <div
+              class="@max-[365px]:tracking-tighter @max-[365px]:text-lg @max-[565px]:text-xl font-bold text-3xl"
+            >
+              انجام امور ارزی شما در کمترین زمان
+            </div>
+            <div
+              class="@max-[565px]:text-sm @max-[365px]:text-xs @max-[365px]:tracking-tighter mt-3"
+            >
+              پرداخت های ایمن و مطمئن با مریخ ارز
+            </div>
+          </div>
+        </div>
+        <!-- قیمت لحظه ای رمز ارزها -->
+        <div class="mx-10">
+          <div>
+            <div class="text-gray-600 font-light tracking-tight">
+              قیمت لحظه‌ای مهمترین ارزها
+            </div>
+            <div class="text-4xl font-bold my-6">آخرین قیمت ارزهای دیجیتال</div>
+            <!-- Digital currencies -->
+            <div class="overflow-x-auto">
+              <table class="mt-20 mb-30 mx-auto w-[1200px]">
+                <thead>
+                  <tr class="**:text-gray-700 **:font-light">
+                    <td>نام ارز</td>
+                    <td>قیمت به دلار</td>
+                    <td>تغییر روزانه</td>
+                    <td>خرید از ما</td>
+                    <td>فروش به ما</td>
+                    <td>نمودار هفتگی</td>
+                  </tr>
+                </thead>
+                <!-- table body -->
+                <tbody class="*:even:bg-[#f3a20d0d]">
+                  <!-- btc -->
+                  <tr class="mt-20">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px] mt-8 pb-5"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/1.png"
+                        alt="bitcoin-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >BTC</span
+                        >
+                        <span class="text-sm font-semibold">Bitcoin</span>
+                        <div class="text-xs font-light text-gray-700">
+                          بیت کوین
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold pb-5"
+                    >
+                      <span id="btc-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light pb-5"
+                    >
+                      <span dir="ltr" id="btc-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8 pb-5">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8 pb-5">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8 pb-5"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/1.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8 pb-5">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- eth -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/1027.png"
+                        alt="ETH-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >ETH</span
+                        >
+                        <span class="text-sm font-semibold">Ethereum</span>
+                        <div class="text-xs font-light text-gray-700">
+                          اتریوم
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="eth-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="eth-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/1027.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- tether -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/825.png"
+                        alt="Tether-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >USDT</span
+                        >
+                        <span class="text-sm font-semibold">Tether </span>
+                        <div class="text-xs font-light text-gray-700">تتر</div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="">1.00</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/825.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- xrp -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/52.png"
+                        alt="xrp-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >XRP</span
+                        >
+                        <span class="text-sm font-semibold">XRP</span>
+                        <div class="text-xs font-light text-gray-700">ریپل</div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="eth-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="eth-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/52.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- BNB -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/1839.png"
+                        alt="Tether-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >BNB</span
+                        >
+                        <span class="text-sm font-semibold">BNB </span>
+                        <div class="text-xs font-light text-gray-700">
+                          بایننس کوین
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="">1.00</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/825.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- SOL -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        class="w-[32px] h-[32px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/5426.png"
+                        alt="SOL-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >SOL</span
+                        >
+                        <span class="text-sm font-semibold">Solana</span>
+                        <div class="text-xs font-light text-gray-700">
+                          سولانا
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="eth-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="eth-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/5426.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- DOge -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/74.png"
+                        alt="doge-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >DOGE</span
+                        >
+                        <span class="text-sm font-semibold">Dogecoin</span>
+                        <div class="text-xs font-light text-gray-700">
+                          دوج کوین
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="btc-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="btc-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/74.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!--ADA -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/2010.png"
+                        alt="ada-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >ADA</span
+                        >
+                        <span class="text-sm font-semibold">Cardano</span>
+                        <div class="text-xs font-light text-gray-700">
+                          کاردانو
+                        </div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="btc-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="btc-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/1958.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                  <!-- Tron -->
+                  <tr class="*:py-5">
+                    <td
+                      class="flex items-center w-[280px] @max-[1270px]:w-[200px]"
+                    >
+                      <img
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/32x32/1958.png"
+                        alt="tron-logo"
+                      />
+                      <a href="#" class="px-5">
+                        <span class="text-sm font-light px-3 text-[#999]"
+                          >TRX</span
+                        >
+                        <span class="text-sm font-semibold">Tron</span>
+                        <div class="text-xs font-light text-gray-700">ترون</div>
+                      </a>
+                    </td>
+
+                    <td
+                      class="w-[145px] @max-[1270px]:w-[139px] pt-8 font-semibold"
+                    >
+                      <span id="btc-price">...</span>
+                    </td>
+                    <td
+                      class="w-[120px] @max-[1270px]:w-[100px] @max-[1145px]:w-[90px] pt-8 font-light"
+                    >
+                      <span dir="ltr" id="btc-change">...</span>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td class="w-[165px] pt-8">
+                      <div class="font-light">8,920,255,993</div>
+                      <div class="text-xs font-light text-gray-700">تومان</div>
+                    </td>
+                    <td
+                      class="w-[190px] @max-[1270px]:w-[175px] @max-[1145px]:w-[150px] pt-8"
+                    >
+                      <img
+                        class="w-[110px] @max-[1145px]:w-[100px]"
+                        src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/charts/32196.svg?ver=1748177207"
+                        alt="chart"
+                      />
+                    </td>
+                    <td class="pt-8">
+                      <a
+                        class="border @max-[1145px]:tracking-tighter w-[20%] border-gray-600 px-4 py-2 rounded-full text-sm text-gray-700 tracking-tight hover:border-[#f3a20dba] hover:text-[#F3A30D]"
+                        href="login.html"
+                        >خرید و فروش</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mb-30 mt-6 justify-self-center">
+              <a
+                class="border-[1px] border-[#f3a20dba] rounded-full py-3 tracking-tight px-4 font-light hover:bg-[#f3a20dba] transition-all"
+                href="#"
+                >مشاهده تمام ارزهای دیجیتال</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!--part Registration  -->
+        <div class="relative flex flex-col items-center mt-10">
+          <div
+            href="#"
+            class="border-[1px] @max-[328px]:w-[40%] @max-[328px]:text-base @max-[328px]:tracking-tighter xl:w-[9%] md:w-[15%] sm:w-[18%] sm:-top-3 absolute md:-top-2.5 sm:[17%] flex items-center justify-center border-[#f3a20dba] bg-[#F4F7FB] font-bold rounded-2xl h-9 @max-[640px]:w-[25%] @max-[433px]:w-[31%] @max-[640px]:-top-4"
+          >
+            ثبت نام آسان!
+          </div>
+          <div class="w-[95%]">
+            <img
+              class="rotate-180 w-full h-[300px]"
+              src="../pictures/bg-fastLogin.png"
+              alt=""
+            />
+          </div>
+          <!-- input number -->
+          <div class="absolute top-[40%]">
+            <input
+              class="rounded-lg bg-white outline-none tracking-tighter font-light w[30%] h-8 p-5 pr-7 border-[1px] border-[#f3a20dba]"
+              type="text"
+              placeholder="شماره تلفن خود را وارد کنید!"
+            />
+            <div class="absolute right-[5%] bottom-[25%]">
+              <img class="" src="../pictures/svgPhone.svg" alt="mobile-svg" />
+            </div>
+          </div>
+          <!-- text Registration -->
+          <div class="absolute top-[60%] **:tracking-tight">
+            <span class="text-sm font-semibold"
+              >اگر قبلا ثبت نام کرده اید,</span
+            >
+            <span
+              ><a class="text-sky-600 text-sm font-medium" href="login.html"
+                >واردشوید!</a
+              ></span
+            >
+          </div>
+          <!-- easy registration -->
+          <div
+            class="absolute bottom-8 xl:w-[9%] md:w-[12%] sm:w-[14%] @max-[640px]:w-[20%] @max-[440px]:w-[29%]"
+          >
+            <a
+              href="login.html"
+              class="h-9 flex items-center justify-center border-none bg-[#f3a20dba] hover:bg-[#f3a20d] font-bold rounded-2xl transition-all"
+              >ثبت نام</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="mt-10">
+      <!-- first part -->
+      <div
+        class="bg-[#f5f5f5] w-[95%] h-[300px] @max-[414px]:h-[370px] @max-[389px]:h-[400px] @max-[330px]:h-[450px] @max-[258px]:h-[600px] mx-auto"
+      >
+        <div class="pt-5 text-center">
+          <span class="text-xl tracking-tight font-bold">مریخ</span>
+          <span class="text-xl -pr-0.5 font-bold text-[#F3A30D]">ارز</span>
+          <span>,</span>
+          <span class="text-sm font-semibold"
+            >هر آنچه برای معاملات ارزی خود نیاز دارید</span
+          >
+        </div>
+        <!-- text -->
+        <div
+          class="p-5 *:text-[15px] *:pt-3 *:font-normal @max-[430px]:*:pt-5 @max-[465px]:*:text-sm @max-[465px]:*:font-medium @max-[258px]:*:pt-3 @max-[258px]:*:leading-8 @max-[435px]:*:tracking-tight"
+        >
+          <div>
+            تبادل کلیه ارزهای دیجیتال و پول های الکترونیک با حداقل کارمزد
+          </div>
+          <div>خرید سرورهای اختصاصی از کشورهای مختلف با قیمت استثنایی</div>
+          <div>خرید آسان و مطمئن از سایت های متنوع خارجی</div>
+          <div>شارژ حساب های خارجی و کیف پول شما</div>
+          <div>شارژ حساب های خارجی و ولت شما</div>
+          <div>پشتیبانی و پاسخگویی 24 ساعته</div>
+        </div>
+      </div>
+      <!-- second part -->
+      <div
+        class="mx-auto px-10 @max-[580px]:px-3 w-[100%] h-[160px] @max-[430px]:h-[280px] mt-5 bg-[#F1F7FF] border-t-[1px] border-t-[#f3a20dba]"
+      >
+        <div class="flex items-center justify-between pt-3">
+          <div>
+            <span class="text-lg tracking-tight font-bold">مریخ</span>
+            <span class="text-lg -pr-0.5 font-bold text-[#F3A30D]">ارز</span>
+          </div>
+          <div>
+            <span class="text-lg tracking-tight font-bold">merikh</span>
+            <span class="text-lg -pr-0.5 font-bold text-[#F3A30D]">arz</span>
+          </div>
+        </div>
+        <!--  -->
+        <div
+          class="flex items-center justify-between mt-5 @max-[430px]:flex-col"
+        >
+          <div
+            class="*:block *:pt-2 @max-[580px]:*:tracking-tighter @max-[455px]:*:text-sm @max-[455px]:*:hover:text-[15px] @max-[455px]:*:font-medium @max-[430px]:*:pt-4 @max-[430px]:*:text-start"
+          >
+            <a
+              class="hover:text-[#F3A30D] hover:text-[17px] transition-all"
+              href="#"
+              >حواله پرفکت مانی</a
+            >
+            <a
+              class="hover:text-[#F3A30D] hover:text-[17px] transition-all"
+              href="#"
+              >خرید سرور اختصاصی</a
+            >
+          </div>
+          <div
+            class="*:block *:pt-2 @max-[580px]:*:tracking-tighter @max-[455px]:*:text-sm @max-[455px]:*:hover:text-[15px] @max-[455px]:*:font-medium @max-[430px]:*:pt-4 @max-[430px]:*:text-start @max-[430px]:*:mr-[15px]"
+          >
+            <a
+              class="hover:text-[#F3A30D] hover:text-[17px] transition-all"
+              href="#"
+              >خرید از سایت های خارجی</a
+            >
+            <a
+              class="hover:text-[#F3A30D] hover:text-[17px] transition-all"
+              href="#"
+              >شارژ حساب شما</a
+            >
+          </div>
+          <div class="*:mt-8">
+            <a
+              class="rounded-2xl px-2 @max-[430px]:-mr-5 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[328px]:w-[100px] w-[114px] h-[34px] bg-[#F4F7FB]"
+              href="#"
+            >
+              <img
+                src="https://merikh.saina-shop.ir/merikhArz/src/images/call.svg"
+                alt=""
+              />
+              <span class="tracking-tighter">تماس با ما</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="w-full h-full overlay invisible opacity-0 md:hidden bg-black/40 fixed inset-0 z-10 transition-all"
+    ></div>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

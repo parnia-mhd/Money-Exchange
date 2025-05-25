@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لیست سفارشات </title>
+  <link rel="stylesheet" href="../styles/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Vazirmatn:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+<body class="bg-gray-100 @container font-Vazirmatn">
+
+  <svg class="hidden">
+    <symbol id="alert" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+    </symbol>
+    <symbol
+    id="Menu-bar"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    class="size-6"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+    />
+  </symbol>
+
+  <symbol
+  id="close"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class="size-6"
+>
+  <path
+    fill-rule="evenodd"
+    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+    clip-rule="evenodd"
+  />
+</symbol>
+
+<symbol id="cart" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 467.685"><path fill="#34B169" d="M159.632 0h87.127c9.117 0 16.576 7.459 16.576 16.576v68.882H143.056V16.576C143.056 7.459 150.515 0 159.632 0z"/><path fill="#4C80BF" d="M313.587 34.74c33.703 0 62.487 21.049 73.941 50.718H239.642c11.454-29.669 40.238-50.718 73.945-50.718z"/><path fill="#FFD448" d="M407.338 10.942c44.42 0 81.311 32.196 88.626 74.528l-.303-.012H318.712c7.319-42.323 44.211-74.516 88.626-74.516z"/><path fill="#FB5541" fill-rule="nonzero" d="M151.727 278.707l-47.29-171.245a16.321 16.321 0 01-.994-5.63c0-9.04 7.335-16.374 16.374-16.374h375.844c1.29.039 2.598.19 3.903.512 8.76 2.155 14.114 11.004 11.959 19.764l-42.37 171.42c-1.324 7.708-8.045 13.578-16.133 13.578H167.46v-.05c-7.16.004-13.734-4.741-15.733-11.975z"/><path fill="#333" d="M224.685 387.66c22.097 0 40.013 17.911 40.013 40.013 0 22.097-17.916 40.012-40.013 40.012-22.101 0-40.016-17.915-40.016-40.012 0-22.102 17.915-40.013 40.016-40.013zM400.109 387.66c22.101 0 40.012 17.911 40.012 40.013 0 22.097-17.911 40.012-40.012 40.012-22.098 0-40.013-17.915-40.013-40.012 0-22.102 17.915-40.013 40.013-40.013z"/><path fill="#B73E30" fill-rule="nonzero" d="M225.838 158.688c-.419-6.329 4.369-11.808 10.698-12.227 6.329-.419 11.807 4.368 12.227 10.698l4.115 61.158c.42 6.329-4.368 11.808-10.697 12.227-6.329.42-11.807-4.368-12.227-10.697l-4.116-61.159zM301.103 157.923c0-6.352 5.157-11.508 11.509-11.508 6.353 0 11.509 5.156 11.509 11.508v61.159c0 6.353-5.156 11.509-11.509 11.509-6.352 0-11.509-5.156-11.509-11.509v-61.159zM376.462 157.159c.419-6.33 5.898-11.117 12.227-10.698 6.329.419 11.116 5.898 10.697 12.227l-4.116 61.159c-.419 6.329-5.898 11.117-12.227 10.697-6.329-.419-11.116-5.898-10.697-12.227l4.116-61.158z"/><path fill="#484848" fill-rule="nonzero" d="M16.37 52.333C7.331 52.333 0 45.002 0 35.963c0-9.039 7.331-16.37 16.37-16.37h42.603l1.635.082c14.882.271 28.426 3.187 39.818 10.277 12.468 7.758 21.775 19.861 26.687 37.928 16.553 70.979 39.349 142.07 56.387 213.068 7.105 28.084 12.961 42.544 22.167 48.729 8.034 5.398 21.336 6.547 42.272 6.473 8.516-.027 16.817-.202 25.329-.202h175.209c9.04 0 16.37 7.331 16.37 16.37 0 9.039-7.33 16.371-16.37 16.371H272.499c-8.092 0-16.033.058-24.121.073-27.615.074-45.895-1.91-60.875-11.974-17.356-11.657-26.5-31.463-35.703-67.916L95.522 76.446c-2.543-9.362-6.83-15.299-12.359-18.739-5.929-3.689-13.827-5.242-22.963-5.42l-1.227.046H16.37z"/><path fill="#333" fill-rule="nonzero" d="M0 35.963c0-9.039 7.331-16.37 16.37-16.37h42.603l1.635.082c14.882.271 28.426 3.187 39.818 10.277 12.468 7.758 21.775 19.861 26.687 37.928 16.553 70.979 39.349 142.07 56.387 213.068 7.105 28.084 12.961 42.544 22.167 48.729 8.045 5.405 21.375 6.551 42.366 6.473 8.472-.027 16.735-.202 25.203-.202h175.241c9.04 0 16.37 7.331 16.37 16.37H260.248c-62.622 1.103-76.286-2.865-92.59-67.41l-56.34-212.745c-7.459-27.436-27.149-36.052-52.345-36.2H0z"/></symbol>    
+
+<symbol id="date" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 121"><defs><style>.cls-1{fill:#ef4136;}.cls-1,.cls-3,.cls-4,.cls-6{fill-rule:evenodd;}.cls-2{fill:gray;}.cls-3{fill:#fff;}.cls-4{fill:#c72b20;}.cls-5,.cls-6{fill:#1a1a1a;}</style></defs><title>calendar-color</title><path class="cls-1" d="M11.52,6.67h99.84a11.57,11.57,0,0,1,11.52,11.52V44.94H0V18.19A11.56,11.56,0,0,1,11.52,6.67Zm24.79,9.75A9.31,9.31,0,1,1,27,25.73a9.31,9.31,0,0,1,9.31-9.31Zm49.79,0a9.31,9.31,0,1,1-9.31,9.31,9.31,9.31,0,0,1,9.31-9.31Z"/><path class="cls-2" d="M111.36,121H11.52A11.57,11.57,0,0,1,0,109.48V40H122.88v69.46A11.56,11.56,0,0,1,111.36,121Z"/><path class="cls-3" d="M12.75,117.31h97.38a9.1,9.1,0,0,0,9.06-9.06V40H3.69v68.23a9.09,9.09,0,0,0,9.06,9.06Z"/><path class="cls-4" d="M86.1,14.63a11.11,11.11,0,1,1-7.85,3.26l.11-.1a11.06,11.06,0,0,1,7.74-3.16Zm0,1.79a9.31,9.31,0,1,1-9.31,9.31,9.31,9.31,0,0,1,9.31-9.31Z"/><path class="cls-4" d="M36.31,14.63a11.11,11.11,0,1,1-7.85,3.26l.11-.1a11.08,11.08,0,0,1,7.74-3.16Zm0,1.79A9.31,9.31,0,1,1,27,25.73a9.31,9.31,0,0,1,9.31-9.31Z"/><path class="cls-5" d="M80.54,4.56C80.54,2,83,0,86.1,0s5.56,2,5.56,4.56V25.77c0,2.51-2.48,4.56-5.56,4.56s-5.56-2-5.56-4.56V4.56Z"/><path class="cls-5" d="M30.75,4.56C30.75,2,33.24,0,36.31,0s5.56,2,5.56,4.56V25.77c0,2.51-2.48,4.56-5.56,4.56s-5.56-2-5.56-4.56V4.56Z"/><path class="cls-6" d="M22,85.62H36a1.79,1.79,0,0,1,1.79,1.79v11.7A1.8,1.8,0,0,1,36,100.9H22a1.8,1.8,0,0,1-1.8-1.79V87.41A1.8,1.8,0,0,1,22,85.62Z"/><path class="cls-6" d="M54.58,85.62H68.64a1.79,1.79,0,0,1,1.79,1.79v11.7a1.8,1.8,0,0,1-1.79,1.79H54.58a1.8,1.8,0,0,1-1.79-1.79V87.41a1.8,1.8,0,0,1,1.79-1.79Z"/><path class="cls-6" d="M86.87,85.62h14.06a1.8,1.8,0,0,1,1.79,1.79v11.7a1.8,1.8,0,0,1-1.79,1.79H86.87a1.8,1.8,0,0,1-1.79-1.79V87.41a1.79,1.79,0,0,1,1.79-1.79Z"/><path class="cls-6" d="M22,56.42H36a1.8,1.8,0,0,1,1.79,1.8V69.91A1.8,1.8,0,0,1,36,71.7H22a1.8,1.8,0,0,1-1.8-1.79V58.22a1.81,1.81,0,0,1,1.8-1.8Z"/><path class="cls-6" d="M54.58,56.42H68.64a1.8,1.8,0,0,1,1.79,1.8V69.91a1.8,1.8,0,0,1-1.79,1.79H54.58a1.79,1.79,0,0,1-1.79-1.79V58.22a1.8,1.8,0,0,1,1.79-1.8Z"/><path class="cls-6" d="M86.87,56.42h14.06a1.8,1.8,0,0,1,1.79,1.8V69.91a1.8,1.8,0,0,1-1.79,1.79H86.87a1.79,1.79,0,0,1-1.79-1.79V58.22a1.8,1.8,0,0,1,1.79-1.8Z"/></symbol>
+  </svg>
+
+  
+<!-- هدر -->
+<header
+class="flex items-center justify-between mx-auto px-5 w-[100%] h-[64px] bg-[#F1F7FF] border-b-[1px] border-b-[#f3a20dba]"
+>
+<!-- right side -->
+<div class="flex items-center">
+  <!-- menu -->
+  <nav>
+    <!-- icon menu -->
+    <div class="">
+      <svg class="cursor-pointer Menu-bar w-11 h-12">
+        <use xlink:href="#Menu-bar"></use>
+      </svg>
+      <svg class="hidden close-icon cursor-pointer w-11 h-12">
+        <use xlink:href="#close"></use>
+      </svg>
+    </div>
+    <!-- menu items -->
+    <div
+      class="nav z-50 @max-[300px]:w-[210px] -right-[270px] absolute top-15 w-[270px] h-[380px] bg-white shadow-2xl shadow-[#e6eef8] rounded-2xl border-t-2 border-t-[#f3a20dba] transition-all"
+    >
+      <ul >
+        <li
+          class="transition-colors hover:text-[#f3a20dcc] delay-75 hover:border-b-[0.5px] border-b-[#f3a20dcc cursor-pointer inline-block pr-9 pt-5 py-2.5"
+        >
+          <a href="List of orders.html">سفارشات شما</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer hover:text-[#f3a20dcc] pr-9 py-2.5 w-30"
+        >
+          <a href="#">حواله یوتوپیا</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید ووچر یوتوپیا</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">شارژ حساب های شما</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید سرور اختصاصی</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">خرید از سایت های خارجی</a>
+        </li>
+        <li
+          class="transition-colors delay-75 hover:border-b-[0.5px] cursor-pointer inline-block hover:text-[#f3a20dcc] pr-9 py-2.5"
+        >
+          <a href="#">تیکت به پشتیبانی</a>
+        </li>
+        <li class="flex items-center justify-around py-2.5">
+          <!-- menu button -->
+          <a
+            class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[328px]:w-[100px] w-[114px] h-[34px] bg-[#F4F7FB]"
+            href="#"
+          >
+            <img
+              src="https://merikh.saina-shop.ir/merikhArz/src/images/call.svg"
+              alt=""
+            />
+            <span class="tracking-tighter text-zinc-700">تماس با ما</span>
+          </a>
+          <a
+            class="rounded-2xl px-2 border-[1px] border-[#f3a20dba] hover:bg-[#f3a20d36] flex items-center justify-around @max-[300px]:w-[85px] w-[100px] h-[34px] bg-[#F4F7FB]"
+            href="#"
+          >
+            <img
+              src="https://merikh.saina-shop.ir/merikhArz/src/images/desc.svg"
+              alt=""
+            />
+            <span class="tracking-tighter text-zinc-700">درباره ما</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+  <!-- title -->
+
+<div
+class="mr-7 @max-[328px]:mr-3 @max-[328px]:tracking-tighter @max-[328px]:*:text-xl"
+>
+<span class="text-2xl font-bold"> مریخ</span>
+<span class="text-2xl font-medium pr-0.5 text-[#F3A30D]">ارز</span>
+</div>
+
+<!-- left side -->
+<div>
+  <a
+    class="hover:text-[#F3A30D] text-red-900 animate-pulse"
+    href="#"
+  >
+    <svg class="w-8 h-8 ">
+      <use xlink:href="#alert"></use>
+    </svg>
+  </a>
+</div>
+</header>
+<!--  -->
+<div class="flex items-center justify-center mx-auto mt-8 w-[25%] h-[70px] @max-[800px]:w-[50%] @max-[466px]:w-[80%] text-[#f3a20dd7] rounded-3xl">
+  <svg class=" @max-[305px]:w-9 @max-[305px]:h-10 w-11 h-12">
+    <use xlink:href="#cart"></use>
+  </svg>
+<span class="pr-4 text-2xl @max-[305px]:text-lg @max-[305px]:pr-3 @max-[305px]:tracking-tighter font-semibold">لیست سفارشات</span>
+</div>
+<!-- سفارشات -->
+<section class="max-w-6xl mx-auto px-4 mt-8 space-y-6 mb-12">
+
+  <!-- سفارش تکی -->
+  <div class="bg-white shadow-md rounded-2xl p-6 space-y-4">
+
+    <!-- لیبل سرویس + آیکون -->
+    <div class="flex items-center gap-2">
+      <span class="bg-[#f3a20dd7] text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+                حواله پرفکت مانی
+      </span>
+    </div>
+
+    <!-- جزئیات سفارش -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-sm text-gray-700">
+      <div class="flex items-center"><svg class="w-5 h-5"><use xlink:href="#date"></use></svg> <strong class="px-2">تاریخ ثبت سفارش:</strong><span class="pr-1">1404/01/01</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/pending-clock-icon.svg" alt="time-pic"><strong class="px-2">زمان ثبت سفارش:</strong><span class="pr-1"> 22:00</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/coin-svgrepo-com.svg" alt="coin-svg"><strong class="pr-2">مبلغ:</strong><span class="px-2">$ 5 ,</span> <span>(5.000.000 تومان )</span></div>
+      <div><strong>کد رهگیری:</strong> <span class="pr-1">#ABC12345</span></div>
+      <div><strong>شماره سفارش:</strong> <span class="pr-1">12547</span></div>
+      <div><strong>شماره حساب گیرنده:</strong> <span class="pr-1">IR120540000000123456789</span></div>
+      <div><strong>توضیحات:</strong> <span class="pr-1">انجام حواله پرفکت مانی با درگاه بانکی.</span></div>
+    </div>
+  </div>
+
+  <!-- سفارش دوم -->
+  <div class="bg-white shadow-md rounded-2xl p-6 space-y-4">
+
+    <!-- لیبل سرویس + آیکون -->
+    <div class="flex items-center gap-2">
+      <span class="bg-green-500 text-white text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+افزایش کیف پول      </span>
+    </div>
+
+    <!-- جزئیات سفارش -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-sm text-gray-700">
+      <div class="flex items-center"><svg class="w-5 h-5"><use xlink:href="#date"></use></svg> <strong class="px-2">تاریخ ثبت سفارش:</strong><span class="pr-1">1404/01/01</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/pending-clock-icon.svg" alt="time-pic"><strong class="px-2">زمان ثبت سفارش:</strong><span class="pr-1"> 22:00</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/coin-svgrepo-com.svg" alt="coin-svg"><strong class="pr-2">مبلغ:</strong><span class="px-2">$ 5 ,</span> <span>(5.000.000 تومان )</span></div>
+      <div><strong>شماره سفارش:</strong> 12548</div>
+    </div>
+  </div>
+
+  <!-- سفارش سوم -->
+  <div class="bg-white shadow-md rounded-2xl p-6 space-y-4">
+
+    <!-- لیبل سرویس + آیکون -->
+    <div class="flex items-center gap-2">
+      <span class="bg-[#f3a20dd7] text-white text-xs font-bold px-4 py-1 rounded-full flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+                حواله پرفکت مانی
+      </span>
+    </div>
+
+    <!-- جزئیات سفارش -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-sm text-gray-700">
+      <div class="flex items-center"><svg class="w-5 h-5"><use xlink:href="#date"></use></svg> <strong class="px-2">تاریخ ثبت سفارش:</strong><span class="pr-1">1404/01/01</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/pending-clock-icon.svg" alt="time-pic"><strong class="px-2">زمان ثبت سفارش:</strong><span class="pr-1"> 22:00</span></div>
+      <div class="flex items-center"> <img class="w-5 h-5" src="../pictures/coin-svgrepo-com.svg" alt="coin-svg"><strong class="pr-2">مبلغ:</strong><span class="px-2">$ 5 ,</span> <span>(5.000.000 تومان )</span></div>
+      <div><strong>شماره سفارش:</strong> 12549</div>
+      <div class="pt-3"><a class="text-blue-600 pb-1.5 hover:text-[#f3a20dd7] hover:border-b-[#f3a20dd7] text-base border-b-[0.5px] border-b-blue-600" href="#">جزئیات بیشتر</a></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- فوتر -->
+<footer class="bg-indigo-50 py-4 shadow-inner mt-8">
+  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+    © 2025 تمامی حقوق محفوظ است.
+  </div>
+</footer>
+<script src="../scripts/script.js"></script>
+
+</body>
+</html>
