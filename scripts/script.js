@@ -177,3 +177,4 @@ setInterval(fetchETHData, 60000); // هر 60 ثانیه آپدیت شود
 // USDT
 
 // xrp
+
