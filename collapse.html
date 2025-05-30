@@ -1,98 +1,39 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        direction: rtl;
-      }
-      .positive {
-        color: green;
-      }
-      .negative {
-        color: red;
-      }
-    </style>
-    <link rel="stylesheet" href="styles/output.css" />
+    <title>پایین‌ترین قیمت بیت‌کوین دیروز</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <!-- <h2>قیمت و درصد تغییرات</h2>
-    <div id="crypto-container"></div>
+  <body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="bg-white p-6 rounded-xl shadow-md text-center max-w-sm w-full">
+      <h1 class="text-2xl font-bold mb-4">📉 پایین‌ترین قیمت بیت‌کوین دیروز</h1>
+      <p id="low-price" class="text-xl text-gray-700">در حال بارگذاری...</p>
+    </div>
 
     <script>
-      const symbols = [
-        "BTCUSDT",
-        "ETHUSDT",
-        "XRPUSDT",
-        "BNBUSDT",
-        "SOLUSDT",
-        "USDCUSDT",
-        "DOGEUSDT",
-        "ADAUSDT",
-        "TRXUSDT",
-      ];
-
-      async function fetchPrices() {
-        const container = document.getElementById("crypto-container");
-        container.innerHTML = "";
-
-        for (const symbol of symbols) {
-          try {
-            const res = await fetch(
-              `https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`
-            );
-            const data = await res.json();
-            const price = parseFloat(data.lastPrice);
-            const change = parseFloat(data.priceChangePercent);
-
-            const box = document.createElement("div");
-            box.className = "coin-box";
-            box.innerHTML = `
-            قیمت: ${price.toLocaleString("en-US")} دلار<br>
-            تغییر: <span class="${
-              change >= 0 ? "positive" : "negative"
-            }">${change.toFixed(2)}%</span>
-          `;
-            container.appendChild(box);
-          } catch (err) {
-            console.error(`خطا در دریافت ${symbol}:`, err);
-            const box = document.createElement("div");
-            box.className = "coin-box";
-            box.innerHTML = `دریافت اطلاعات ناموفق بود.`;
-            container.appendChild(box);
-          }
-        }
-      }
-
-      fetchPrices();
-      setInterval(fetchPrices, 60000); // هر ۶۰ ثانیه آپدیت بشه
-    </script> -->
-    <h2 id="output">در حال دریافت اطلاعات...</h2>
-
-    <script>
-      async function getXRP() {
+      async function fetchBitcoinLowPrice() {
         try {
           const res = await fetch(
-            "https://api.allorigins.win/get?url=" +
-              encodeURIComponent(
-                "https://api.nobitex.ir/market/stats?src=xrp-tmn"
-              )
+            "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1685404800&to=1685491200"
           );
           const data = await res.json();
-          const parsed = JSON.parse(data.contents);
-          const xrp = parsed.stats["xrp-tmn"];
-
-          console.log("قیمت:", xrp.latest);
-          console.log("تغییرات:", xrp.dayChange);
-        } catch (e) {
-          console.error("خطا در دریافت داده:", e);
+          const lowPrice = data.prices.reduce(
+            (min, price) => (price[1] < min ? price[1] : min),
+            Infinity
+          );
+          const formattedPrice = lowPrice.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          });
+          document.getElementById("low-price").textContent = formattedPrice;
+        } catch (error) {
+          document.getElementById("low-price").textContent =
+            "خطا در دریافت داده";
         }
       }
 
-      getXRP();
+      fetchBitcoinLowPrice();
     </script>
   </body>
 </html>
