@@ -1,39 +1,106 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>پایین‌ترین قیمت بیت‌کوین دیروز</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>نمودار قیمت بیت‌کوین</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body class="flex items-center justify-center h-screen bg-gray-100">
-    <div class="bg-white p-6 rounded-xl shadow-md text-center max-w-sm w-full">
-      <h1 class="text-2xl font-bold mb-4">📉 پایین‌ترین قیمت بیت‌کوین دیروز</h1>
-      <p id="low-price" class="text-xl text-gray-700">در حال بارگذاری...</p>
+  <body class="bg-gray-100 p-6 font-sans">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6">
+      <h1 class="text-2xl font-bold mb-4 text-center">
+        نمودار قیمت بیت‌کوین (تومان)
+      </h1>
+
+      <div class="flex justify-center gap-2 mb-4">
+        <button
+          onclick="loadData('30')"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          ۱ ماه
+        </button>
+        <button
+          onclick="loadData('90')"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          ۳ ماه
+        </button>
+        <button
+          onclick="loadData('180')"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          ۶ ماه
+        </button>
+        <button
+          onclick="loadData('365')"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          ۱ سال
+        </button>
+      </div>
+
+      <canvas id="btcChart" height="100"></canvas>
     </div>
 
     <script>
-      async function fetchBitcoinLowPrice() {
-        try {
-          const res = await fetch(
-            "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd&from=1685404800&to=1685491200"
-          );
-          const data = await res.json();
-          const lowPrice = data.prices.reduce(
-            (min, price) => (price[1] < min ? price[1] : min),
-            Infinity
-          );
-          const formattedPrice = lowPrice.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-          });
-          document.getElementById("low-price").textContent = formattedPrice;
-        } catch (error) {
-          document.getElementById("low-price").textContent =
-            "خطا در دریافت داده";
-        }
+      let chart;
+
+      async function loadData(days) {
+        const dollarToToman = 60000; // عدد حدودی، می‌تونی با API نرخ ارز بگیری
+        const url = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=${days}`;
+
+        const res = await axios.get(url);
+        const prices = res.data.prices;
+
+        const labels = prices.map((p) =>
+          new Date(p[0]).toLocaleDateString("fa-IR")
+        );
+        const data = prices.map((p) => Math.round(p[1] * dollarToToman));
+
+        if (chart) chart.destroy();
+
+        const ctx = document.getElementById("btcChart").getContext("2d");
+        chart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "قیمت بیت‌کوین (تومان)",
+                data: data,
+                borderColor: "#3b82f6",
+                backgroundColor: "rgba(59, 130, 246, 0.1)",
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+              },
+            },
+            scales: {
+              y: {
+                ticks: {
+                  callback: (value) => value.toLocaleString("fa-IR") + " تومان",
+                },
+              },
+            },
+          },
+        });
       }
 
-      fetchBitcoinLowPrice();
+      // بارگزاری اولیه
+      loadData("30");
     </script>
   </body>
 </html>

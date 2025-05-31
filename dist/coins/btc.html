@@ -6,7 +6,7 @@
     <title>خرید | فروش بیت کوین</title>
     <link rel="stylesheet" href="../../styles/output.css" />
   </head>
-  <body class="font-Vazirmatn">
+  <body class="@container font-Vazirmatn">
     <!-- svg -->
     <svg class="hidden">
       <symbol
@@ -22,10 +22,21 @@
           clip-rule="evenodd"
         />
       </symbol>
-      <symbol id="transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-</symbol>
-
+      <symbol
+        id="transition"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+        />
+      </symbol>
     </svg>
     <!-- Header -->
     <header
@@ -45,9 +56,11 @@
 
     <!-- Main Content -->
     <main>
-      <div class="m-20">
+      <div class="m-20 @min-[1200px]:flex items-start">
         <!-- right part -->
-        <div class="">
+        <div
+          class="@min-[1200px]:w-1/2 @max-[1200px]:mb-20 @max-[1200px]:justify-self-center @max-[566px]:w-full @max-[550px]:w-[140%]"
+        >
           <div class="w-full flex items-center">
             <img
               src="https://www.iranicard.ir/wp-content/uploads/crypto/cache/coins/64x64/1.png"
@@ -104,234 +117,312 @@
             </label>
           </div>
           <!-- transaction -->
-          <div class="mt-10 flex items-center *:rounded-lg ">
+          <div class="mt-10 flex items-center *:rounded-lg">
             <div
-              class="flex items-center justify-around border-[1px] border-gray-300 p-4 w-[12%] "
+              class="flex items-center justify-around border-[1px] border-gray-300 p-4 w-[24%] @max-[1252px]:w-[30%]"
             >
               <input
                 type="text"
                 placeholder="تعداد ارز"
-                class="w-[35%] outline-none font-light tracking-tight"
+                class="w-[95%] @max-[569px]:h-[40px] outline-none font-light tracking-tight"
               />
               <!--  -->
-              <div id="btn-open" class="flex items-center relative ">
-                <div>BTC</div>
-                <svg class="w-5 h-5 mr-3 " id="arrow">
+              <div id="btn-open" class="flex items-center relative">
+                <div class="@max-[773px]:hidden">BTC</div>
+                <svg class="w-5 h-5 mr-3" id="arrow">
                   <use href="#arrow-down"></use>
                 </svg>
-                            <!-- menu -->
-<div id="menu-btc"  class=" bg-white rounded-2xl shadow mr-20 hidden absolute top-10.5 -right-10" >
-  <div>
-    <input
-      type="search"
-      class="tracking-tighter font-[370] p-1 pr-2.5 outline-none pb-2"
-      placeholder="نام ارز مورد نظر...."
-    />
-  </div>
-  <div >
-    <ul class="h-[300px] overflow-y-scroll *:hover:bg-[#f3a20d2f]">
-      <!-- Bitcoin -->
-      <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" class="w-full h-full object-contain" alt="btc" />
-          </div>
-          <span class="text-sm">Bitcoin</span>
-        </div>
-        <span class="text-gray-500 text-xs">BTC</span>
-      </li>
+                <!-- menu -->
+                <div
+                  id="menu-btc"
+                  class="bg-white rounded-2xl shadow mr-20 hidden absolute top-10.5 -right-10"
+                >
+                  <div>
+                    <input
+                      type="search"
+                      class="tracking-tighter font-[370] p-1 pr-2.5 outline-none pb-2"
+                      placeholder="نام ارز مورد نظر...."
+                    />
+                  </div>
+                  <div>
+                    <ul
+                      class="h-[300px] overflow-y-scroll *:hover:bg-[#f3a20d2f]"
+                    >
+                      <!-- Bitcoin -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+                              class="w-full h-full object-contain"
+                              alt="btc"
+                            />
+                          </div>
+                          <span class="text-sm">Bitcoin</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">BTC</span>
+                      </li>
 
-      <!-- Ethereum -->
-      <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Ethereum</span>
-        </div>
-        <span class="text-gray-500 text-xs">ETH</span>
-      </li>
+                      <!-- Ethereum -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Ethereum</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">ETH</span>
+                      </li>
 
-      <!-- tether -->
-             <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Thether</span>
-        </div>
-        <span class="text-gray-500 text-xs">USDT</span>
-      </li>
-<!--XRP  -->
-             <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">XRP</span>
-        </div>
-        <span class="text-gray-500 text-xs">XRP</span>
-      </li>
+                      <!-- tether -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/825.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Thether</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">USDT</span>
+                      </li>
+                      <!--XRP  -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">XRP</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">XRP</span>
+                      </li>
 
-      <!--  BNB -->
-                     <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Binance Coin</span>
-        </div>
-        <span class="text-gray-500 text-xs">BNB</span>
-      </li>
+                      <!--  BNB -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Binance Coin</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">BNB</span>
+                      </li>
 
-<!-- Sol -->
-                      <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Solana</span>
-        </div>
-        <span class="text-gray-500 text-xs">SOL</span>
-      </li>
+                      <!-- Sol -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Solana</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">SOL</span>
+                      </li>
 
-      <!--Doge   -->
-                      <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/74.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Dogecoin</span>
-        </div>
-        <span class="text-gray-500 text-xs">DOGE</span>
-      </li>
-<!-- tron -->
-                       <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">TRON</span>
-        </div>
-        <span class="text-gray-500 text-xs">TRX</span>
-      </li>
-<!-- ADA -->
-                        <li class="flex items-center justify-between py-3 px-4 cursor-pointer">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" class="w-full h-full object-contain" alt="eth" />
-          </div>
-          <span class="text-sm">Cardano</span>
-        </div>
-        <span class="text-gray-500 text-xs">ADA</span>
-      </li>
-</ul>
-          </div>
-        </div>
-
+                      <!--Doge   -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/74.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Dogecoin</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">DOGE</span>
+                      </li>
+                      <!-- tron -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">TRON</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">TRX</span>
+                      </li>
+                      <!-- ADA -->
+                      <li
+                        class="flex items-center justify-between py-3 px-4 cursor-pointer"
+                      >
+                        <div class="flex items-center gap-2">
+                          <div class="w-5 h-5 flex items-center justify-center">
+                            <img
+                              src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png"
+                              class="w-full h-full object-contain"
+                              alt="eth"
+                            />
+                          </div>
+                          <span class="text-sm">Cardano</span>
+                        </div>
+                        <span class="text-gray-500 text-xs">ADA</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-        <!-- price -->
-        <div>
-<div class="flex items-center border-[1px] border-gray-300 p-4 mr-1 rounded-lg">
+            <!-- price -->
+            <div>
+              <div
+                class="flex items-center border-[1px] border-gray-300 max-[750px]:px-1 p-4 mr-1 rounded-lg"
+              >
+                <div
+                  id="btc-price"
+                  class="@max-[937px]:w-[120px] @max-[750px]:w-[100%] @max-[750px]:text-sm @max-[515px]:text-xs @max-[579px]:h-[40px] @max-[579px]:pt-3"
+                >
+                  در حال بارگذاری...
+                </div>
+                <div
+                  class="font-light mr-10 @max-[515px]:text-sm @max-[515px]:mr-8"
+                >
+                  تومان
+                </div>
+              </div>
+            </div>
+            <!-- button transition -->
+            <a
+              href="#"
+              class="w-[15%] @max-[579px]:h-[73px] @max-[579px]:w-[20%] cursor-pointer flex items-center justify-center border-[1px] border-[#f3a20dba] bg-[#f3a20dba] hover:bg-[#f3a20deb] transition-all px-2 py-3.5 mr-1"
+            >
+              <span>معامله</span>
+              <svg class="w-5 h-5 mr-3 @max-[760px]:hidden" id="arrow">
+                <use href="#transition"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- information -->
+          <!-- اطلاعات بیت‌کوین -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 -mr-12 @max-[1200px]:w-full mt-8 border-t border-gray-300 pt-5 text-center"
+          >
+            <!-- نماد -->
+            <div>
+              <div class="tracking-tighter text-gray-600">نماد</div>
+              <div class="text-lg pt-2">BTC</div>
+            </div>
 
-    <div id="btc-price" class="">
-      در حال بارگذاری...
-    </div>
-        <div class=" font-light mr-10 ">تومان</div>
-  </div>        </div>
-  <!-- button transition -->
-   <a href="#" class="cursor-pointer flex items-center justify-center border-[1px] border-[#f3a20dba] bg-[#f3a20dba] hover:bg-[#f3a20deb] transition-all p-4 mr-1">
-    <span>معامله</span>
-                    <svg class="w-5 h-5 mr-3 " id="arrow">
-                  <use href="#transition"></use>
-                </svg>
-   </a>
+            <!-- رتبه بازار -->
+            <div>
+              <div class="tracking-tighter text-gray-600">رتبه بازار</div>
+              <div id="btc-rank" class="text-lg pt-2">در حال دریافت...</div>
+            </div>
+
+            <!-- معاملات روزانه -->
+            <div>
+              <div class="tracking-tighter text-gray-600">معاملات روزانه</div>
+              <div class="flex items-center justify-center pt-2">
+                <div id="btc-volume" class="text-lg">در حال دریافت...</div>
+                <span class="text-xs pr-3 text-gray-400">میلیارد دلار</span>
+              </div>
+            </div>
+
+            <!-- ارزش بازار بیت کوین -->
+            <div>
+              <div class="tracking-tighter text-gray-600">
+                ارزش بازار بیت کوین
+              </div>
+              <div class="flex items-center justify-center pt-2">
+                <div id="btc-marketcap" class="text-lg">در حال دریافت...</div>
+                <span class="text-xs pr-3 text-gray-400">تیلیارد دلار</span>
+              </div>
+            </div>
+
+            <!-- تغییرات 1 روزه -->
+            <div>
+              <div class="tracking-tighter text-gray-600">تغییرات 1 روزه</div>
+              <div class="pt-2" dir="ltr" id="change">...</div>
+            </div>
+
+            <!-- کوین در گردش -->
+            <div>
+              <div class="tracking-tighter text-gray-600">کوین در گردش</div>
+              <div class="pt-2 text-lg" id="circulating">در حال دریافت...</div>
+            </div>
+
+            <!-- بالاترین قیمت دیروز -->
+            <div>
+              <div class="tracking-tighter text-gray-600">
+                بالاترین قیمت دیروز
+              </div>
+              <div class="flex items-center justify-center pt-2">
+                <div id="high-price" class="text-lg">در حال دریافت...</div>
+                <span class="text-xs pr-3 text-gray-400">تومان</span>
+              </div>
+            </div>
+
+            <!-- پایین‌ترین قیمت دیروز -->
+            <div>
+              <div class="tracking-tighter text-gray-600">
+                پایین‌ترین قیمت دیروز
+              </div>
+              <div class="flex items-center justify-center pt-2">
+                <div id="low-price" class="text-lg">در حال دریافت...</div>
+                <span class="text-xs pr-3 text-gray-400">تومان</span>
+              </div>
+            </div>
+
+            <!-- سهم بازار -->
+            <div>
+              <div class="tracking-tighter text-gray-600">سهم بازار</div>
+              <div class="pt-2 text-lg" id="btc-market-share">
+                در حال دریافت...
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- left part -->
+        <div class="">
+          <div
+            class="bg-[#f3a20dba] p-3 flex items-center rounded-xl justify-around w-[250px] *:text-white *:hover:text-gray-950 *:hover:font-semibold"
+          >
+            <a href="#">نمودار قیمتی</a>
+            <a href="#">نمودار تکنیکال</a>
+          </div>
+        </div>
       </div>
-      <!-- information -->
-         <div class=" flex gap-x-35 pt-5 border-t-[1px] border-t-gray-300 mt-5 w-[40%]">
-          <!-- نماد -->
-           <div class="justify-self-center">
-          <div class="tracking-tighter text-gray-600 ">نماد</div>
-          <div class="text-lg pt-2">BTC</div>
-           </div>
-           <!--  -->
-                      <div class="justify-self-center text-center">
-          <div class="tracking-tighter text-gray-600 ">رتبه بازار</div>
-          <div id="btc-rank" class="text-lg pt-2">در حال دریافت...</div>
-           </div>
-<!-- معاملات روزانه -->
-                       <div class="justify-self-center text-center">
-          <div class="tracking-tighter text-gray-600 ">معاملات روزانه </div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="btc-volume" class="text-lg ">در حال دریافت...
-          </div>
-            <span class="text-xs pr-3 text-gray-400">میلیارد دلار</span>
-          </div>
-           </div>
-         </div>
-         <!-- second row -->
-                     <!-- ارزش بازار بیت کوین -->
-                      <div class="flex  pt-5  mt-5 w-[40%]">
-                       <div class="justify-self-center text-center">
-          <div class="tracking-tighter text-gray-600 "> ارزش بازار بیت کوین </div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="btc-marketcap" class="text-lg ">در حال دریافت...
-          </div>
-            <span class="text-xs pr-3 text-gray-400">تیلیارد دلار</span>
-          </div>
-           </div>
-           <!-- تغییرات یک روزه -->
-                                   <div class="justify-self-center text-center px-18">
-          <div class="tracking-tighter text-gray-600 "> تغییرات 1 روزه</div>
-                        <div class="pt-2" dir="ltr" id="change">...</div>
-
-           </div>
-           <!-- کوین در گردش -->
-                       <div class="justify-self-center text-center ">
-          <div class="tracking-tighter text-gray-600 "> کوین در گردش </div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="circulating" class="text-lg ">در حال دریافت...
-          </div>
-          </div>
-           </div>
-
-
-                      </div>
-                      <!-- 3rd row -->
-                                             <div class="flex  pt-5  mt-5 w-[40%]">
-                       <div class="justify-self-center text-center">
-          <div class="tracking-tighter text-gray-600 "> بالاترین قیمت دیروز</div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="high-price" class="text-lg ">در حال دریافت...
-          </div>
-            <span class="text-xs pr-3 text-gray-400">تومان</span>
-          </div>
-           </div>
-           <!-- پایین ترین قیمت دیروز بیت کوین -->
-                       <div class="justify-self-center text-center px-6">
-          <div class="tracking-tighter text-gray-600 "> پایین ترین قیمت دیروز</div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="low-price" class="text-lg ">در حال دریافت...
-          </div>
-            <span class="text-xs pr-3 text-gray-400">تومان</span>
-          </div>
-           </div>
-           <!-- سهم بازار -->
-                       <div class="justify-self-center text-center ">
-          <div class="tracking-tighter text-gray-600 "> سهم بازار </div>
-          <div class=" flex items-center justify-around pt-2">
-          <div id="btc-market-share" class="text-lg ">در حال دریافت...
-          </div>
-          </div>
-           </div>
-
-
-                      </div>
-
-
     </main>
-        <!-- Footer -->
+    <!-- Footer -->
     <footer
       class="w-full bg-indigo-50 py-4 mt-8 text-center text-sm text-gray-500 border-t-[1px] border-t-[#f3a20dba]"
     >
